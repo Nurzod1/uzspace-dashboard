@@ -4,7 +4,7 @@
       <span>Logo</span>
     </div>
     <div class="sidebar-menu">
-      <div class="sidebar-menu__item active">
+      <button class="sidebar-menu__item active">
         <div class="sidebar-menu__item--icon">
           <svg
             width="24"
@@ -34,8 +34,8 @@
           </svg>
         </div>
         <span class="sidebar-menu__item--text">Overview</span>
-      </div>
-      <div class="sidebar-menu__item">
+      </button>
+      <button class="sidebar-menu__item">
         <div class="sidebar-menu__item--icon">
           <svg
             width="24"
@@ -63,8 +63,8 @@
           </svg>
         </div>
         <span class="sidebar-menu__item--text">Upload Logs</span>
-      </div>
-      <div class="sidebar-menu__item">
+      </button>
+      <button class="sidebar-menu__item">
         <div class="sidebar-menu__item--icon">
           <svg
             width="24"
@@ -92,8 +92,8 @@
           </svg>
         </div>
         <span class="sidebar-menu__item--text">Status Updates</span>
-      </div>
-      <div class="sidebar-menu__item">
+      </button>
+      <button class="sidebar-menu__item">
         <div class="sidebar-menu__item--icon">
           <svg
             width="24"
@@ -119,7 +119,7 @@
           </svg>
         </div>
         <span class="sidebar-menu__item--text">Map</span>
-      </div>
+      </button>
     </div>
     <div class="sidebar-logout">
       <button class="sidebar-logout__btn">
@@ -150,7 +150,7 @@
     </div>
   </div>
 </template>
-  
+
 <script></script>
 
 <style lang="scss" scoped>
@@ -174,10 +174,11 @@
       display: flex;
       align-items: center;
       gap: 11px;
-      width: 226px;
-      height: 26px;
+      width: 248px;
+      height: 48px;
       border-radius: 8px;
-      padding: 11px;
+      margin-bottom: 4px;
+      padding: 11px !important;
 
       &.active {
         background-color: #f2f2f2;
@@ -197,12 +198,10 @@
   &-logout {
     position: absolute;
     bottom: 30px;
-    
+
     &__btn {
       display: flex;
       align-items: center;
-      border: none;
-      background: none;
       padding: 8px;
 
       &--icon {
