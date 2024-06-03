@@ -1,16 +1,27 @@
 <script setup>
 import MainSidebar from '@/components/MainSidebar.vue'
+import MainHeader from '@/components/MainHeader.vue'
 </script>
 <template>
-  <MainSidebar />
+  <div class="home-wrapper">
+    <div class="home-wrapper__sidebar">
+      <MainSidebar />
+    </div>
+    <div class="home-wrapper__main">
+      <MainHeader />
+    </div>
+  </div>
 </template>
 
-<style>
-@media (min-width: 1440px) {
-  .about {
-    min-height: 100vh;
+<style lang="scss" scoped>
+.home {
+  &-wrapper {
     display: flex;
-    align-items: center;
+    height: -webkit-fill-available;
+
+    &__main {
+      width: 100%;
+    }
   }
 }
 </style>
