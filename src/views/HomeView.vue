@@ -1,6 +1,7 @@
 <script setup>
 import MainSidebar from '@/components/MainSidebar.vue'
 import MainHeader from '@/components/MainHeader.vue'
+import ChartCanvas from '@/components/ChartCanvas.vue' // Импортируйте ваш компонент Chart.vue
 </script>
 <template>
   <div class="home-wrapper">
@@ -9,6 +10,7 @@ import MainHeader from '@/components/MainHeader.vue'
     </div>
     <div class="home-wrapper__main">
       <MainHeader />
+      <ChartCanvas></ChartCanvas>
     </div>
   </div>
 </template>
