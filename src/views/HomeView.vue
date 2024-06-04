@@ -1,7 +1,7 @@
 <script setup>
 import MainSidebar from '@/components/MainSidebar.vue'
 import MainHeader from '@/components/MainHeader.vue'
-import ChartCanvas from '@/components/ChartCanvas.vue' // Импортируйте ваш компонент Chart.vue
+import ChartStatistics from '@/components/ChartStatistics.vue'
 </script>
 <template>
   <div class="home-wrapper">
@@ -10,7 +10,7 @@ import ChartCanvas from '@/components/ChartCanvas.vue' // Импортируйт
     </div>
     <div class="home-wrapper__main">
       <MainHeader />
-      <ChartCanvas></ChartCanvas>
+      <ChartStatistics></ChartStatistics>
     </div>
   </div>
 </template>
