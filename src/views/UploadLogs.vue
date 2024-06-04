@@ -102,12 +102,6 @@ import TableLog from '@/components/Logs/TableLog.vue'
     overflow: auto;
     padding: 30px;
 
-    &__title {
-      font-size: 24px;
-      font-weight: 600;
-      margin-bottom: 30px;
-    }
-
     &__charts {
       display: flex;
       gap: 30px;
@@ -120,6 +114,11 @@ import TableLog from '@/components/Logs/TableLog.vue'
     align-items: center;
     justify-content: space-between;
     margin-bottom: 24px;
+
+    &__title {
+      font-size: 24px;
+      font-weight: 600;
+    }
 
     &__btns {
       display: flex;
@@ -137,6 +136,7 @@ import TableLog from '@/components/Logs/TableLog.vue'
       &--icon {
         max-width: 20px;
         max-height: 20px;
+        margin-right: 4px;
       }
 
       &--text {
