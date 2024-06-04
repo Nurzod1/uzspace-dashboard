@@ -1,20 +1,29 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { Chart, DoughnutController, ArcElement, Tooltip, Legend } from 'chart.js'
+import {
+  Chart,
+  BarController,
+  BarElement,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale
+} from 'chart.js'
 
 // Register necessary components globally
-Chart.register(DoughnutController, ArcElement, Tooltip, Legend)
+Chart.register(BarController, BarElement, Tooltip, Legend, CategoryScale, LinearScale)
 
 const chartCanvas = ref(null)
 
 const renderChart = () => {
   new Chart(chartCanvas.value.getContext('2d'), {
-    type: 'doughnut',
+    type: 'bar',
     data: {
       labels: ['Completed', 'In Progress', 'New', 'Rejected'],
       datasets: [
         {
-          data: [38.6, 30.8, 22.5, 8.1],
+          label: 'Updates',
+          data: [38600, 30800, 22500, 8100],
           backgroundColor: [
             'rgba(102, 187, 106, 0.6)', // green
             'rgba(66, 165, 245, 0.6)', // blue
@@ -28,8 +37,8 @@ const renderChart = () => {
             'rgba(33, 33, 33, 1)'
           ],
           borderWidth: 1,
-          borderRadius: 20, // Add this to round the borders
-          cutout: '70%' // Adjust cutout for the inner radius
+          barThickness: 20, // Adjust this value to make the bars thinner
+          borderRadius: 5
         }
       ]
     },
@@ -43,7 +52,23 @@ const renderChart = () => {
         }
       },
       responsive: true,
-      maintainAspectRatio: false
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 30000 // Adjust this value to decrease the interval between y-axis values
+          },
+          grid: {
+            display: true // Remove vertical grid lines
+          }
+        },
+        x: {
+          grid: {
+            display: false // Optional: Remove horizontal grid lines
+          }
+        }
+      }
     }
   })
 }
@@ -56,22 +81,8 @@ onMounted(() => {
 <template>
   <div class="chart-container">
     <div class="chart">
-      <p class="chart-title">Statistics</p>
+      <p class="chart-title">Updates</p>
       <canvas ref="chartCanvas"></canvas>
-    </div>
-    <div class="chart-legend">
-      <ul>
-        <li><span class="legend-color completed"></span>Completed:</li>
-        <li><span class="legend-color in-progress"></span>In Progress:</li>
-        <li><span class="legend-color new"></span>New:</li>
-        <li><span class="legend-color rejected"></span>Rejected:</li>
-      </ul>
-      <ul class="chart-legend__values">
-        <li>38.6%</li>
-        <li>30.8%</li>
-        <li>22.5%</li>
-        <li>8.1%</li>
-      </ul>
     </div>
   </div>
 </template>
@@ -90,42 +101,13 @@ onMounted(() => {
 }
 
 .chart {
-  width: 40%;
+  width: 100%;
   height: 100%;
 
   &-title {
     font-size: 16px;
     font-weight: 600;
   }
-}
-
-.chart-legend {
-  width: 50%;
-  display: flex;
-  gap: 75px;
-
-  &__item {
-    display: flex;
-    align-items: center;
-  }
-
-  &__values {
-    li {
-      margin-bottom: 12px !important;
-    }
-  }
-}
-
-.chart-legend ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.chart-legend li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
 }
 
 .legend-color {
