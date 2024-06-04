@@ -148,12 +148,11 @@ export default {}
     &__input {
       outline: none;
       border: none;
-      width: 108px;
+      width: 160px;
       height: 28px;
-      padding: 6px;
       border-radius: 8px;
       font-size: 14px;
-      padding: 0 26px;
+      padding: 0 26px !important;
       background-color: #f3f3f3;
     }
 

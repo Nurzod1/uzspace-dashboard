@@ -23,7 +23,7 @@ const renderChart = () => {
       datasets: [
         {
           label: 'Updates',
-          data: [38600, 30800, 22500, 8100],
+          data: [88600, 30800, 22500, 8100],
           backgroundColor: [
             'rgba(102, 187, 106, 0.6)', // green
             'rgba(66, 165, 245, 0.6)', // blue
@@ -36,7 +36,7 @@ const renderChart = () => {
             'rgba(255, 183, 77, 1)',
             'rgba(33, 33, 33, 1)'
           ],
-          borderWidth: 1,
+          borderWidth: 0,
           barThickness: 20, // Adjust this value to make the bars thinner
           borderRadius: 5
         }

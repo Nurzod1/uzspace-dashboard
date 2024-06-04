@@ -1,8 +1,9 @@
 <script setup>
-import MainSidebar from '@/components/MainSidebar.vue'
-import MainHeader from '@/components/MainHeader.vue'
-import ChartStatistics from '@/components/ChartStatistics.vue'
-import ChartUpdates from '@/components/ChartUpdates.vue'
+import MainSidebar from '@/components/OverView/MainSidebar.vue'
+import MainHeader from '@/components/OverView/MainHeader.vue'
+import ChartStatistics from '@/components/OverView/ChartStatistics.vue'
+import ChartUpdates from '@/components/OverView/ChartUpdates.vue'
+import PgAdmin from '@/components/OverView/PgAdmin.vue'
 </script>
 <template>
   <div class="home-wrapper">
@@ -17,6 +18,7 @@ import ChartUpdates from '@/components/ChartUpdates.vue'
           <ChartStatistics />
           <ChartUpdates />
         </div>
+        <PgAdmin />
       </div>
     </div>
   </div>
@@ -32,6 +34,7 @@ import ChartUpdates from '@/components/ChartUpdates.vue'
     width: 100%;
 
     &__content {
+      overflow: auto;
       padding: 30px;
     }
 
@@ -44,6 +47,7 @@ import ChartUpdates from '@/components/ChartUpdates.vue'
     &__charts {
       display: flex;
       gap: 30px;
+      margin-bottom: 30px;
     }
   }
 }

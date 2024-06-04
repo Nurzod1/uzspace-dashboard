@@ -14,7 +14,7 @@ const renderChart = () => {
       labels: ['Completed', 'In Progress', 'New', 'Rejected'],
       datasets: [
         {
-          data: [38.6, 30.8, 22.5, 8.1],
+          data: [88.6, 30.8, 22.5, 8.1],
           backgroundColor: [
             'rgba(102, 187, 106, 0.6)', // green
             'rgba(66, 165, 245, 0.6)', // blue
@@ -27,7 +27,7 @@ const renderChart = () => {
             'rgba(255, 183, 77, 1)',
             'rgba(33, 33, 33, 1)'
           ],
-          borderWidth: 1,
+          borderWidth: 0,
           borderRadius: 20, // Add this to round the borders
           cutout: '70%' // Adjust cutout for the inner radius
         }
@@ -67,7 +67,7 @@ onMounted(() => {
         <li><span class="legend-color rejected"></span>Rejected:</li>
       </ul>
       <ul class="chart-legend__values">
-        <li>38.6%</li>
+        <li>88.6%</li>
         <li>30.8%</li>
         <li>22.5%</li>
         <li>8.1%</li>
@@ -103,6 +103,7 @@ onMounted(() => {
   width: 50%;
   display: flex;
   gap: 75px;
+  margin-top: 50px;
 
   &__item {
     display: flex;
@@ -111,7 +112,7 @@ onMounted(() => {
 
   &__values {
     li {
-      margin-bottom: 12px !important;
+      margin-bottom: 22px !important;
     }
   }
 }
@@ -125,7 +126,7 @@ onMounted(() => {
 .chart-legend li {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .legend-color {
