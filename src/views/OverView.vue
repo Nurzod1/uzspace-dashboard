@@ -1,25 +1,17 @@
 <script setup>
-import MainSidebar from '@/components/OverView/MainSidebar.vue'
-import MainHeader from '@/components/OverView/MainHeader.vue'
 import ChartStatistics from '@/components/OverView/ChartStatistics.vue'
 import ChartUpdates from '@/components/OverView/ChartUpdates.vue'
 import PgAdmin from '@/components/OverView/PgAdmin.vue'
 </script>
 <template>
   <div class="home-wrapper">
-    <div class="home-sidebar">
-      <MainSidebar />
-    </div>
-    <div class="home-main">
-      <MainHeader />
-      <div class="home-main__content">
-        <p class="home-main__title">General dashboard</p>
-        <div class="home-main__charts">
-          <ChartStatistics />
-          <ChartUpdates />
-        </div>
-        <PgAdmin />
+    <div class="home-main__content">
+      <p class="home-main__title">General dashboard</p>
+      <div class="home-main__charts">
+        <ChartStatistics />
+        <ChartUpdates />
       </div>
+      <PgAdmin />
     </div>
   </div>
 </template>

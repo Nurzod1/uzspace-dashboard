@@ -1,8 +1,14 @@
+<script setup>
+import { useRoute } from 'vue-router'
+import BreadCrumbs from '@/components/BreadCrumbs.vue'
+
+const route = useRoute()
+const routes = [{ path: '/', name: 'dashboards' }]
+</script>
 <template>
   <div class="header">
     <div class="header-breadcrumbs">
-      <span class="header-breadcrumbs__item">Dashboards /</span>
-      <span class="header-breadcrumbs__item"> Overview</span>
+      <BreadCrumbs :routes="routes" />
     </div>
     <div class="header-main">
       <div class="header-search">
@@ -119,10 +125,6 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {}
-</script>
 
 <style lang="scss" scoped>
 .header {

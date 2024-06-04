@@ -56,10 +56,10 @@ import ArrowsClockwise from '@/assets/icons/ArrowsClockwise.svg'
 import MapTrifold from '@/assets/icons/MapTrifold.svg'
 
 const menuItems = [
-  { icon: ChartPieSlice, text: 'Overview', to: '/' },
-  { icon: Download, text: 'Upload Logs', to: '/UploadLogs' },
-  { icon: ArrowsClockwise, text: 'Status Updates', to: '/' },
-  { icon: MapTrifold, text: 'Map', to: '/' }
+  { icon: ChartPieSlice, text: 'Overview', to: '/overview' },
+  { icon: Download, text: 'Upload Logs', to: '/upload-logs' },
+  { icon: ArrowsClockwise, text: 'Status Updates', to: '/status-updates' },
+  { icon: MapTrifold, text: 'Map', to: '/map' }
 ]
 
 const activeIndex = ref(0)
@@ -68,14 +68,10 @@ function setActive(index) {
   activeIndex.value = index
 }
 
-function logout() {
-  // Your logout logic here
-}
+function logout() {}
 </script>
 
-<style scoped>
-/* Ваши стили */
-</style>
+<style scoped></style>
 
 <style lang="scss" scoped>
 .sidebar {

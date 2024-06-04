@@ -1,22 +1,43 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import OverView from '@/views/OverView.vue'
+import StatusUpdates from '@/views/StatusUpdates.vue'
 import UploadLogs from '@/views/UploadLogs.vue'
+import Map from '@/views/Map.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: OverView
+      path: '/overview',
+      name: 'overview',
+      component: OverView,
+      meta: {
+        breadcrumb: 'Overview'
+      }
     },
     {
-      path: '/uploadlogs',
+      path: '/upload-logs',
       name: 'uploadlogs',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('@/views/UploadLogs.vue')
+      component: UploadLogs,
+      meta: {
+        breadcrumb: 'Upload Logs'
+      }
+    },
+    {
+      path: '/status-updates',
+      name: 'status-updates',
+      component: StatusUpdates,
+      meta: {
+        breadcrumb: 'Status Updates'
+      }
+    },
+    {
+      path: '/map',
+      name: 'map',
+      component: Map,
+      meta: {
+        breadcrumb: 'Map'
+      }
     }
   ]
 })

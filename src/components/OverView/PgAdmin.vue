@@ -51,6 +51,66 @@ const tableData = [
     name: 'Kate Morrison',
     bia: '77155a22-d1f7-4a4-',
     status: 'new'
+  },
+  {
+    date: '2024-02-13, 20:30',
+    name: 'Kate Morrison',
+    bia: '77155a22-d1f7-4a4-',
+    status: 'new'
+  },
+  {
+    date: '2024-02-13, 20:30',
+    name: 'Kate Morrison',
+    bia: '77155a22-d1f7-4a4-',
+    status: 'new'
+  },
+  {
+    date: '2024-02-13, 20:30',
+    name: 'Kate Morrison',
+    bia: '77155a22-d1f7-4a4-',
+    status: 'new'
+  },
+  {
+    date: '2024-02-13, 20:30',
+    name: 'Kate Morrison',
+    bia: '77155a22-d1f7-4a4-',
+    status: 'new'
+  },
+  {
+    date: '2024-02-13, 20:30',
+    name: 'Kate Morrison',
+    bia: '77155a22-d1f7-4a4-',
+    status: 'new'
+  },
+  {
+    date: '2024-02-13, 20:30',
+    name: 'Kate Morrison',
+    bia: '77155a22-d1f7-4a4-',
+    status: 'new'
+  },
+  {
+    date: '2024-02-13, 20:30',
+    name: 'Kate Morrison',
+    bia: '77155a22-d1f7-4a4-',
+    status: 'new'
+  },
+  {
+    date: '2024-02-13, 20:30',
+    name: 'Kate Morrison',
+    bia: '77155a22-d1f7-4a4-',
+    status: 'new'
+  },
+  {
+    date: '2024-02-13, 20:30',
+    name: 'Kate Morrison',
+    bia: '77155a22-d1f7-4a4-',
+    status: 'new'
+  },
+  {
+    date: '2024-02-13, 20:30',
+    name: 'Kate Morrison',
+    bia: '77155a22-d1f7-4a4-',
+    status: 'new'
   }
 ]
 </script>
@@ -67,7 +127,7 @@ const tableData = [
 </template>
 <style lang="scss">
 :root {
-  --el-bg-color: #f7f9fb; /* Set your desired background color */
+  --el-bg-color: #f7f9fb;
   --el-border-radius-round: 20px;
 }
 
