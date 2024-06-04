@@ -1,0 +1,36 @@
+$breakpoints: (
+  xs: 575.98px,
+  sm: 767.98px,
+  md: 991.98px,
+  lg: 1199.98px,
+  xl: 1499.98px
+);
+
+@mixin font-face(
+  $font-family,
+  $file-path,
+  $weight: normal,
+  $style: normal,
+  $asset-pipeline: false
+) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    src:
+      url('#{$file-path}.otf?#iefix') format('embedded-opentype'),
+      url('#{$file-path}.woff2') format('woff2'),
+      url('#{$file-path}.ttf') format('truetype');
+  }
+}
+
+@mixin breakpoint($breakpoint) {
+  $breakpoint-value: map-get(
+    $map: $breakpoints,
+    $key: $breakpoint
+  );
+
+  @media screen and (max-width: $breakpoint-value) {
+    @content;
+  }
+}
