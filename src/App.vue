@@ -23,13 +23,29 @@ import MainHeader from '@/components/OverView/MainHeader.vue'
 .app {
   &-wrapper {
     display: flex;
-    height: -webkit-fill-available;
+    height: 100vh; // Устанавливает высоту на весь видимый экран
+    overflow: hidden; // Предотвращает переполнение на уровне обертки
+  }
+
+  &-sidebar {
+    flex-shrink: 0; // Предотвращает сжатие боковой панели
   }
 
   &-main {
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100vh; // Устанавливает высоту на весь видимый экран
+
+    &__header {
+      flex-shrink: 0; // Предотвращает сжатие заголовка
+    }
+
+    &__content {
+      flex-grow: 1;
+      overflow-y: auto;
+      height: 0;
+    }
   }
 }
 </style>

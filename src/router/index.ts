@@ -9,7 +9,7 @@ const router = createRouter({
   routes: [
     {
       path: '/overview',
-      name: 'overview',
+      name: 'Overview',
       component: OverView,
       meta: {
         breadcrumb: 'Overview'
@@ -17,7 +17,7 @@ const router = createRouter({
     },
     {
       path: '/upload-logs',
-      name: 'uploadlogs',
+      name: 'Upload Logs',
       component: UploadLogs,
       meta: {
         breadcrumb: 'Upload Logs'
@@ -25,7 +25,7 @@ const router = createRouter({
     },
     {
       path: '/status-updates',
-      name: 'status-updates',
+      name: 'Status Updates',
       component: StatusUpdates,
       meta: {
         breadcrumb: 'Status Updates'
@@ -33,7 +33,7 @@ const router = createRouter({
     },
     {
       path: '/map',
-      name: 'map',
+      name: 'Map',
       component: Map,
       meta: {
         breadcrumb: 'Map'

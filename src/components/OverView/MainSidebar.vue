@@ -1,3 +1,26 @@
+<script setup>
+import { ref } from 'vue'
+import ChartPieSlice from '@/assets/icons/ChartPieSlice.svg'
+import Download from '@/assets/icons/Download.svg'
+import ArrowsClockwise from '@/assets/icons/ArrowsClockwise.svg'
+import MapTrifold from '@/assets/icons/MapTrifold.svg'
+
+const menuItems = [
+  { icon: ChartPieSlice, text: 'Overview', to: '/overview' },
+  { icon: Download, text: 'Upload Logs', to: '/upload-logs' },
+  { icon: ArrowsClockwise, text: 'Status Updates', to: '/status-updates' },
+  { icon: MapTrifold, text: 'Map', to: '/map' }
+]
+
+const activeIndex = ref(0)
+
+function setActive(index) {
+  activeIndex.value = index
+}
+
+function logout() {}
+</script>
+
 <template>
   <div class="sidebar-wrapper">
     <div class="sidebar-logo">
@@ -47,29 +70,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-import ChartPieSlice from '@/assets/icons/ChartPieSlice.svg'
-import Download from '@/assets/icons/Download.svg'
-import ArrowsClockwise from '@/assets/icons/ArrowsClockwise.svg'
-import MapTrifold from '@/assets/icons/MapTrifold.svg'
-
-const menuItems = [
-  { icon: ChartPieSlice, text: 'Overview', to: '/overview' },
-  { icon: Download, text: 'Upload Logs', to: '/upload-logs' },
-  { icon: ArrowsClockwise, text: 'Status Updates', to: '/status-updates' },
-  { icon: MapTrifold, text: 'Map', to: '/map' }
-]
-
-const activeIndex = ref(0)
-
-function setActive(index) {
-  activeIndex.value = index
-}
-
-function logout() {}
-</script>
 
 <style scoped></style>
 

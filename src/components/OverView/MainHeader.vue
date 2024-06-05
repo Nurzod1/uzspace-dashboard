@@ -3,7 +3,7 @@ import { useRoute } from 'vue-router'
 import BreadCrumbs from '@/components/BreadCrumbs.vue'
 
 const route = useRoute()
-const routes = [{ path: '/', name: 'dashboards' }]
+const routes = [{ path: '/', name: 'Dashboards' }]
 </script>
 <template>
   <div class="header">
@@ -149,13 +149,22 @@ const routes = [{ path: '/', name: 'dashboards' }]
     position: relative;
     &__input {
       outline: none;
-      border: none;
+      border: 1px solid #f3f3f3;
       width: 160px;
       height: 28px;
       border-radius: 8px;
       font-size: 14px;
       padding: 0 26px !important;
       background-color: #f3f3f3;
+      transition: 0.3s;
+
+      &:hover {
+        border: 1px solid #e2e1e1;
+      }
+
+      &:focus {
+        border: 1px solid #e2e1e1;
+      }
     }
 
     &__icon {
