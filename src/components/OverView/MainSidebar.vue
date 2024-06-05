@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import ChartPieSlice from '@/assets/icons/ChartPieSlice.svg'
 import Download from '@/assets/icons/Download.svg'
 import ArrowsClockwise from '@/assets/icons/ArrowsClockwise.svg'
@@ -16,11 +16,18 @@ const activeIndex = ref(0)
 
 function setActive(index) {
   activeIndex.value = index
+  localStorage.setItem('activeIndex', index) // сохраняем активный индекс в localStorage
 }
 
 function logout() {}
-</script>
 
+onMounted(() => {
+  const storedIndex = localStorage.getItem('activeIndex')
+  if (storedIndex !== null) {
+    activeIndex.value = parseInt(storedIndex)
+  }
+})
+</script>
 <template>
   <div class="sidebar-wrapper">
     <div class="sidebar-logo">
