@@ -1,12 +1,3 @@
-<template>
-  <el-table :data="paginatedData" style="width: 100%">
-    <el-table-column prop="timestamp" label="Timestamp" width="200" />
-    <el-table-column prop="name" label="Name" width="240" />
-    <el-table-column prop="filename" label="Filename" width="518" />
-    <el-table-column prop="file" label="Download" />
-  </el-table>
-</template>
-
 <script lang="ts" setup>
 import { ElTable, ElTableColumn } from 'element-plus'
 import 'element-plus/es/components/table/style/css'
@@ -160,3 +151,12 @@ defineExpose({
   totalItems
 })
 </script>
+
+<template>
+  <el-table :data="paginatedData" style="width: 100%">
+    <el-table-column prop="timestamp" label="Timestamp" width="200" />
+    <el-table-column prop="name" label="Name" width="240" />
+    <el-table-column prop="filename" label="Filename" width="518" />
+    <el-table-column prop="file" label="Download" />
+  </el-table>
+</template>

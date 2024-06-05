@@ -1,6 +1,6 @@
 <script setup>
-import MainSidebar from '@/components/OverView/MainSidebar.vue'
-import MainHeader from '@/components/OverView/MainHeader.vue'
+import MainSidebar from '@/components/MainSidebar.vue'
+import MainHeader from '@/components/MainHeader.vue'
 </script>
 
 <template>
@@ -23,22 +23,21 @@ import MainHeader from '@/components/OverView/MainHeader.vue'
 .app {
   &-wrapper {
     display: flex;
-    height: 100vh; // Устанавливает высоту на весь видимый экран
-    overflow: hidden; // Предотвращает переполнение на уровне обертки
+    height: 100vh;
+    overflow: hidden;
   }
 
   &-sidebar {
-    flex-shrink: 0; // Предотвращает сжатие боковой панели
+    flex-shrink: 0;
   }
 
   &-main {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh; // Устанавливает высоту на весь видимый экран
-
+    height: 100vh;
     &__header {
-      flex-shrink: 0; // Предотвращает сжатие заголовка
+      flex-shrink: 0;
     }
 
     &__content {
