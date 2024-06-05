@@ -148,6 +148,14 @@ onUnmounted(() => {
       border: none;
       padding: 8px 18px;
 
+      &:hover {
+        background-color: #494949;
+      }
+
+      &:active {
+        background-color: #e8e8e8;
+      }
+
       &--icon {
         max-width: 20px;
         max-height: 20px;

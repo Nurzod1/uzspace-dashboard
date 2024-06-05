@@ -107,6 +107,7 @@ onMounted(() => {
   &-title {
     font-size: 16px;
     font-weight: 600;
+    margin-bottom: 10px;
   }
 }
 
