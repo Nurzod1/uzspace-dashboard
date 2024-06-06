@@ -43,23 +43,19 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
 .el-tabs__item {
   color: #A4A4A4;
   padding: 0 8px;
+  
   &.is-active {
     color: #000000;
     font-weight: 600;
   }
+
+  :hover {
+    color: #636363;
+    cursor: pointer;
+}
 }
 
 .el-tabs__active-bar {
   background-color: #000000;
-}
-
-.el-tabs__item:hover {
-    color: #636363;
-    cursor: pointer;
-}
-
-
-
-.map {
 }
 </style>

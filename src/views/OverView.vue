@@ -38,7 +38,7 @@ import PgAdmin from '@/components/OverView/PgAdmin.vue'
 
     &__charts {
       display: flex;
-      gap: 30px;
+      gap: 32px;
       margin-bottom: 30px;
     }
   }

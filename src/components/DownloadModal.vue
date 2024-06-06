@@ -147,6 +147,7 @@ onUnmounted(() => {
       border-radius: 8px;
       border: none;
       padding: 8px 18px;
+      transition: 0.3s;
 
       &:hover {
         background-color: #494949;

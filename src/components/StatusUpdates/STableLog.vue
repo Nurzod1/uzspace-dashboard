@@ -2,7 +2,7 @@
   <el-table :data="paginatedData" style="width: 100%">
     <el-table-column prop="timestamp" label="Timestamp" width="200" />
     <el-table-column prop="cosmos_id" label="Cosmos ID" width="240" />
-    <el-table-column prop="ip_address" label="IP Address" width="518" />
+    <el-table-column prop="ip_address" label="IP Address" width="460" />
     <el-table-column prop="status" label="Status" />
   </el-table>
 </template>

@@ -134,8 +134,8 @@ onMounted(() => {
 .logs {
   &-wrapper {
     overflow: auto;
-    padding: 30px;
-    max-width: 1200px;
+    margin: 30px;
+    max-width: 1096px;
     height: 100%;
     display: flex;
     flex-direction: column;
