@@ -72,7 +72,7 @@ onMounted(() => {
             />
           </svg>
         </div>
-        <span class="sidebar-logout__btn--text">Log Out</span>
+        <span class="sidebar-logout__btn--text">Log In</span>
       </button>
     </div>
   </div>
