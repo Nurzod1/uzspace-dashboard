@@ -20,7 +20,7 @@ const handleClickOutside = (event) => {
     closeModal()
   }
 }
-
+  
 onMounted(() => {
   document.addEventListener('click', handleClickOutside)
 })
