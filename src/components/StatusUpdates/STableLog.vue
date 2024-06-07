@@ -220,18 +220,18 @@ const statusText = (status: 'New' | 'In Progress' | 'Rejected' | 'Completed') =>
 }
 
 .status-icon.new {
-  color: orange;
+  color: #ffcb83;
 }
 
-.status-icon.in-progress {
-  color: blue;
+.status-icon.in_progress {
+  color: #59a8d4;
 }
 
 .status-icon.rejected {
-  color: grey;
+  color: #9fa1a2;
 }
 
 .status-icon.completed {
-  color: green;
+  color: #4caf50;
 }
 </style>
