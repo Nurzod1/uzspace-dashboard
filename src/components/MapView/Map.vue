@@ -2,21 +2,21 @@
   <div class="map">
     <div class="map-tab">
       <el-tabs v-model:active-name="activeName" class="demo-tabs" @tab-click="handleClick">
-        <el-tab-pane label="Tashkent" name="first">Tashkent</el-tab-pane>
-        <el-tab-pane label="Samarkand" name="second">Samarkand</el-tab-pane>
-        <el-tab-pane label="Bukhara" name="third">Bukhara</el-tab-pane>
-        <el-tab-pane label="Namangan" name="fourth">Namangan</el-tab-pane>
-        <el-tab-pane label="Andijan" name="five">Andijan</el-tab-pane>
-        <el-tab-pane label="Fergana" name="six">Fergana</el-tab-pane>
-        <el-tab-pane label="Karshi" name="seven">Karshi</el-tab-pane>
-        <el-tab-pane label="Urgench" name="eight">Urgench</el-tab-pane>
-        <el-tab-pane label="Nukus" name="nine">Nukus</el-tab-pane>
-        <el-tab-pane label="Navoi" name="ten">Navoi</el-tab-pane>
-        <el-tab-pane label="Jizzakh" name="twelve">Jizzakh</el-tab-pane>
-        <el-tab-pane label="Termez" name="eleven">Termez</el-tab-pane>
+        <el-tab-pane label="Tashkent" name="first"></el-tab-pane>
+        <el-tab-pane label="Samarkand" name="second"></el-tab-pane>
+        <el-tab-pane label="Bukhara" name="third"></el-tab-pane>
+        <el-tab-pane label="Namangan" name="fourth"></el-tab-pane>
+        <el-tab-pane label="Andijan" name="five"></el-tab-pane>
+        <el-tab-pane label="Fergana" name="six"></el-tab-pane>
+        <el-tab-pane label="Karshi" name="seven"></el-tab-pane>
+        <el-tab-pane label="Urgench" name="eight"></el-tab-pane>
+        <el-tab-pane label="Nukus" name="nine"></el-tab-pane>
+        <el-tab-pane label="Navoi" name="ten"></el-tab-pane>
+        <el-tab-pane label="Jizzakh" name="twelve"></el-tab-pane>
+        <el-tab-pane label="Termez" name="eleven"></el-tab-pane>
       </el-tabs>
     </div>
-    <div id="map" style="height: 500px; width: 100%"></div>
+    <div id="map" style="height: 725px; width: 100%"></div>
   </div>
 </template>
 
@@ -49,16 +49,12 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
-  height: 725px !important;
-}
-
 .el-tabs__nav-wrap:after {
   display: none;
 }
 .el-tabs__nav-scroll {
-  padding: 32px;
-    padding-bottom: 15px;
+  padding: 32px 15px;
+  padding-bottom: 0px;
 }
 .el-tabs__item {
   color: #A4A4A4;
