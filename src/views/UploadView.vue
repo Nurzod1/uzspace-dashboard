@@ -1,3 +1,4 @@
+// eslint-disable-next-line vue/multi-word-component-names
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
 import { ElForm, ElFormItem, ElInput, ElButton, ElMessage, ElMessageBox, ElUpload } from 'element-plus'

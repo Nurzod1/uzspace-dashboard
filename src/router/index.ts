@@ -2,10 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import AuthLayout from '@/layouts/AuthLayout.vue'
 import OverView from '@/views/OverView.vue'
-import StatusUpdates from '@/views/StatusUpdates.vue'
-import UploadLogs from '@/views/UploadLogs.vue'
-import Map from '@/views/Map.vue'
-import Upload from '@/views/Upload.vue'
+import StatusUpdatesView from '@/views/StatusUpdatesView.vue'
+import UploadLogsView from '@/views/UploadLogsView.vue'
+import MapView from '@/views/MapView.vue'
+import UploadView from '@/views/UploadView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,7 +31,7 @@ const router = createRouter({
         {
           path: '/upload-logs',
           name: 'Upload Logs',
-          component: UploadLogs,
+          component: UploadLogsView,
           meta: {
             breadcrumb: 'Upload Logs'
           }
@@ -45,7 +45,7 @@ const router = createRouter({
         {
           path: '/status-updates',
           name: 'Status Updates',
-          component: StatusUpdates,
+          component: StatusUpdatesView,
           meta: {
             breadcrumb: 'Status Updates'
           }
@@ -59,7 +59,7 @@ const router = createRouter({
         {
           path: '/map',
           name: 'Map',
-          component: Map,
+          component: MapView,
           meta: {
             breadcrumb: 'Map'
           }
@@ -73,7 +73,7 @@ const router = createRouter({
         {
           path: '/upload',
           name: 'Upload',
-          component: Upload,
+          component: UploadView,
           meta: {
             breadcrumb: 'Upload'
           }

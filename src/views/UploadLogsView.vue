@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import TableLog from '@/components/StatusUpdates/STableLog.vue'
+import TableLog from '@/components/UploadLogs/TableLog.vue'
 import 'element-plus/es/components/pagination/style/css'
 import { ElPagination } from 'element-plus'
 import { onMounted } from 'vue'
@@ -29,7 +29,7 @@ onMounted(() => {
 <template>
   <div class="logs-wrapper">
     <div class="logs-header">
-      <p class="logs-header__title">Status Updates</p>
+      <p class="logs-header__title">Upload Logs</p>
       <div class="logs-header__btns">
         <button class="logs-header__btn">
           <div class="logs-header__btn--icon">
@@ -136,7 +136,7 @@ onMounted(() => {
     overflow: auto;
     margin: 30px;
     max-width: 1096px;
-    height: 100%;
+    height: 94%;
     display: flex;
     flex-direction: column;
 

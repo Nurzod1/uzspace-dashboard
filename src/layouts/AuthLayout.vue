@@ -33,6 +33,7 @@ export default {
     left: 30px;
     display: flex;
     align-items: center;
+    flex-direction: column;
     gap: 5px;
   }
 }

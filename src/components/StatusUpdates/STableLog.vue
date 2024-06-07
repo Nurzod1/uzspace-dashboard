@@ -1,14 +1,6 @@
-<template>
-  <el-table :data="paginatedData" style="width: 100%">
-    <el-table-column prop="timestamp" label="Timestamp" width="200" />
-    <el-table-column prop="cosmos_id" label="Cosmos ID" width="240" />
-    <el-table-column prop="ip_address" label="IP Address" width="460" />
-    <el-table-column prop="status" label="Status" />
-  </el-table>
-</template>
-
 <script lang="ts" setup>
-import { ElTable, ElTableColumn } from 'element-plus'
+import { ElTable, ElTableColumn, ElIcon } from 'element-plus'
+import { CircleClose, Check, Clock, Refresh } from '@element-plus/icons-vue'
 import 'element-plus/es/components/table/style/css'
 import 'element-plus/es/components/table-column/style/css'
 import { ref, computed, watch } from 'vue'
@@ -18,7 +10,14 @@ const props = defineProps<{
   size: number
 }>()
 
-const tableData = [
+interface TableData {
+  timestamp: string;
+  cosmos_id: string;
+  ip_address: string;
+  status: 'New' | 'In Progress' | 'Rejected' | 'Completed';
+}
+
+const tableData: TableData[] = [
   {
     timestamp: '2024-02-13, 20:30',
     cosmos_id: '1118989',
@@ -53,7 +52,7 @@ const tableData = [
     timestamp: '2024-02-13, 20:30',
     cosmos_id: '128',
     ip_address: '127.0.0.1',
-    status: 'Competed'
+    status: 'Completed'
   },
   {
     timestamp: '2024-02-13, 20:30',
@@ -83,7 +82,7 @@ const tableData = [
     timestamp: '2024-02-13, 20:30',
     cosmos_id: '128',
     ip_address: '127.0.0.1',
-    status: 'Competed'
+    status: 'Completed'
   },
   {
     timestamp: '2024-02-13, 20:30',
@@ -101,21 +100,21 @@ const tableData = [
     timestamp: '2024-02-13, 20:30',
     cosmos_id: '128',
     ip_address: '127.0.0.1',
-    status: 'Competed'
+    status: 'Completed'
   }
 ]
 
 const currentPage = ref(props.page)
 const pageSize = ref(props.size)
 
-// Вычисление данных для текущей страницы
+// Compute data for the current page
 const paginatedData = computed(() => {
   const start = (currentPage.value - 1) * pageSize.value
   const end = start + pageSize.value
   return tableData.slice(start, end)
 })
 
-// Общее количество элементов
+// Total number of items
 const totalItems = computed(() => tableData.length)
 
 watch(
@@ -135,4 +134,104 @@ watch(
 defineExpose({
   totalItems
 })
+
+const statusClass = (status: 'New' | 'In Progress' | 'Rejected' | 'Completed') => {
+  return {
+    'status-icon': true,
+    'new': status === 'New',
+    'in-progress': status === 'In Progress',
+    'rejected': status === 'Rejected',
+    'completed': status === 'Completed'
+  }
+}
+
+const statusText = (status: 'New' | 'In Progress' | 'Rejected' | 'Completed') => {
+  switch (status) {
+    case 'New':
+      return 'New'
+    case 'In Progress':
+      return 'In Progress'
+    case 'Rejected':
+      return 'Rejected'
+    case 'Completed':
+      return 'Completed'
+    default:
+      return 'Unknown'
+  }
+}
 </script>
+
+<template>
+  <el-table :data="paginatedData" style="width: 100%">
+    <el-table-column prop="timestamp" label="Timestamp" width="200" />
+    <el-table-column prop="cosmos_id" label="Cosmos ID" width="240" />
+    <el-table-column prop="ip_address" label="IP Address" width="450" />
+    <el-table-column label="Status" width="200">
+      <template #default="{ row }">
+        <span :class="statusClass(row.status)">
+          <el-icon :size="20">
+            <circle-close v-if="row.status === 'Rejected'" />
+            <clock v-else-if="row.status === 'In Progress'" />
+            <check v-else-if="row.status === 'Completed'" />
+            <refresh v-else />
+          </el-icon>
+          {{ statusText(row.status) }}
+        </span>
+      </template>
+    </el-table-column>
+  </el-table>
+</template>
+
+<style lang="scss">
+:root {
+  --el-bg-color: #f7f9fb;
+  --el-border-radius-round: 20px;
+}
+
+.table {
+  &-wrapper {
+    max-width: 1096px;
+    background-color: #f7f9fb;
+    border-radius: 20px;
+  }
+
+  &-title {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+}
+
+.el-table {
+  border-radius: 16px !important;
+}
+
+.cell::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background-color: blue;
+}
+
+.status-icon {
+  display: flex;
+  align-items: center;
+}
+
+.status-icon.new {
+  color: orange;
+}
+
+.status-icon.in-progress {
+  color: blue;
+}
+
+.status-icon.rejected {
+  color: grey;
+}
+
+.status-icon.completed {
+  color: green;
+}
+</style>

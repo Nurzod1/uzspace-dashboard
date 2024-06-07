@@ -1,7 +1,10 @@
 <script lang="ts" setup>
-import { ElTable, ElTableColumn } from 'element-plus'
+import { ElTable, ElTableColumn,ElIcon } from 'element-plus'
+import { Download } from '@element-plus/icons-vue'
 import 'element-plus/es/components/table/style/css'
 import 'element-plus/es/components/table-column/style/css'
+import 'element-plus/es/components/icon/style/css'
+
 import { ref, computed, watch } from 'vue'
 
 const props = defineProps<{
@@ -157,6 +160,25 @@ defineExpose({
     <el-table-column prop="timestamp" label="Timestamp" width="200" />
     <el-table-column prop="name" label="Name" width="200" />
     <el-table-column prop="filename" label="Filename" width="518" />
-    <el-table-column prop="file" label="Download" />
+    <el-table-column label="Download">
+      <template v-slot="{ row }">
+        <span class="el-icon-download">
+          <el-icon v-if="row.file === 'ZIP'"><Download /></el-icon>
+          <span>{{ row.file }}</span>
+        </span>
+      </template>
+    </el-table-column>
   </el-table>
 </template>
+
+<style lang="scss">
+.el {
+  &-icon {
+    &-download {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+}
+</style>
