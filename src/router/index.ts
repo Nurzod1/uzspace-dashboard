@@ -6,6 +6,7 @@ import StatusUpdatesView from '@/views/StatusUpdatesView.vue'
 import UploadLogsView from '@/views/UploadLogsView.vue'
 import MapView from '@/views/MapView.vue'
 import UploadView from '@/views/UploadView.vue'
+import LoginView from '@/views/LoginView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -76,6 +77,19 @@ const router = createRouter({
           component: UploadView,
           meta: {
             breadcrumb: 'Upload'
+          }
+        }
+      ]
+    },{
+      path: '/',
+      component: AuthLayout,
+      children: [
+        {
+          path: '/login',
+          name: 'Login',
+          component: LoginView,
+          meta: {
+            breadcrumb: 'Login'
           }
         }
       ]

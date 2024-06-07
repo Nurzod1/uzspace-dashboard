@@ -72,7 +72,7 @@ onMounted(() => {
             />
           </svg>
         </div>
-        <span class="sidebar-logout__btn--text">Log In</span>
+        <router-link class="sidebar-logout__btn--text" to="/login">Log In</router-link>
       </button>
     </div>
   </div>
