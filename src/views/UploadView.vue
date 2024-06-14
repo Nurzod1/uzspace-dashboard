@@ -216,9 +216,15 @@ const beforeRemove: UploadProps['beforeRemove'] = (uploadFile, uploadFiles) => {
     transition: 0.3s;
 
     &:hover {
-      background-color: #d3d3d3;
-      color: #000;
+      background-color: #494949;
       border-color: #d3d3d3;
+      color: #ffffff;
+    }
+
+    &:active {
+      background-color: #e8e8e8;
+      border-color: #e8e8e8;
+      color: #000;
     }
   }
 }
