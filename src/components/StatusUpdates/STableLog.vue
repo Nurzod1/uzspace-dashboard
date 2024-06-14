@@ -165,7 +165,7 @@ const statusText = (status: 'New' | 'In Progress' | 'Rejected' | 'Completed') =>
   <el-table :data="paginatedData" style="width: 100%">
     <el-table-column prop="timestamp" label="Timestamp" width="200" />
     <el-table-column prop="cosmos_id" label="Cosmos ID" width="240" />
-    <el-table-column prop="ip_address" label="IP Address" width="450" />
+    <el-table-column prop="ip_address" label="IP Address" width="456" />
     <el-table-column label="Status" width="200">
       <template #default="{ row }">
         <span :class="statusClass(row.status)">
