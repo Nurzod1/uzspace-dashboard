@@ -16,7 +16,12 @@
         <el-tab-pane label="Termez" name="eleven"></el-tab-pane>
       </el-tabs>
     </div>
-    <div id="map" style="height: 725px; width: 100%"></div>
+    <div class="map-visualization">
+      <div id="map" style="height: 725px; width: 100%"></div>
+      <div class="map-drop__menu">
+        <DropMenu />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -27,6 +32,7 @@ import L from 'leaflet'
 import { ElTabs, ElTabPane } from 'element-plus'
 import 'element-plus/es/components/tabs/style/css'
 import type { TabsPaneContext } from 'element-plus'
+import DropMenu from '@/components/MapView/DropMenu.vue'
 
 // Reactive state
 const activeName = ref('first')
@@ -49,26 +55,48 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
+.map {
+  &-visualization {
+    position: relative;
+  }
+
+  &-drop__menu {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 400;
+    padding: 8px 4px;
+    background-color: #ffffff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 8px;
+  }
+}
+
 .el-tabs__nav-wrap:after {
   display: none;
 }
+
 .el-tabs__nav-scroll {
   padding: 32px 15px;
   padding-bottom: 0px;
 }
+
 .el-tabs__item {
   color: #A4A4A4;
   padding: 0 8px;
+
   &.is-active {
     color: #000000;
     font-weight: 600;
   }
 }
+
 .el-tabs__active-bar {
   background-color: #000000;
 }
+
 .el-tabs__item:hover {
-    color: #636363;
-    cursor: pointer;
+  color: #636363;
+  cursor: pointer;
 }
 </style>
