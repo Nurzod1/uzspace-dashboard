@@ -36,13 +36,14 @@ import MainHeader from '@/components/MainHeader.vue'
     flex-direction: column;
     width: 100%;
     height: 100vh;
+
     &__header {
       flex-shrink: 0;
     }
 
     &__content {
       flex-grow: 1;
-      overflow-y: auto;
+      overflow-y: hidden;
       height: 0;
     }
   }
